@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: samdi-nodejs-deployment-flux-harbor
+  namespace: flux-harbor
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: samdi-nodejs-flux-harbor
+    spec:
+      containers:
+      - name: node-web-app-flux-harbor
+        image: core.harbor.samdi.dfds.cloud/privatelibrary/node-web-app-private:0.0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: server
+      imagePullSecrets:
+        - name: regcred
