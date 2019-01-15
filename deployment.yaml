@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node-web-app-flux-harbor
-        image: registry.samdi.dfds.cloud/privatelib-linus/node-web-app:0.0.3
+        image: registry.samdi.dfds.cloud/privatelib-linus/node-web-app:0.0.2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
